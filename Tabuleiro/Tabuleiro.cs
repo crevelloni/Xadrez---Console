@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tabuleiro
+﻿namespace Tabuleiro
 {
     public class TabuleiroClass
     {
@@ -26,6 +20,12 @@ namespace Tabuleiro
 
         }
 
+        public void ColocarPeca(Peca p, Posicao pos)
+        {
+            this.Peca[pos.Linha, pos.Coluna] = p;
+            p.Posicao = pos;
 
+
+        }
     }
 }

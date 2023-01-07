@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Xadrez___Console.Tabuleiro
+namespace Tabuleiro
 {
     public class Posicao
     {

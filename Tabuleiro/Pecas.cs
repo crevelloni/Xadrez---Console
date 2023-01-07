@@ -1,6 +1,4 @@
-﻿using Xadrez___Console.Tabuleiro;
-
-namespace Tabuleiro
+﻿namespace Tabuleiro
 {
     public class Peca
     {
@@ -9,9 +7,9 @@ namespace Tabuleiro
         public int QtdMovimentos { get; protected set; }
         public TabuleiroClass Tabuleiro { get; protected   set; }
 
-        public Peca(Posicao? posicao, Cor cor, TabuleiroClass tabuleiro)
+        public Peca(TabuleiroClass tabuleiro, Cor cor)
         {
-            Posicao = posicao;
+            Posicao = null;
             Cor = cor;
             Tabuleiro = tabuleiro;
             QtdMovimentos = 0;
