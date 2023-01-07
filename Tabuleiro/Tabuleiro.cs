@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 
 namespace Tabuleiro
 {
-    public class Tabuleiro
+    public class TabuleiroClass
     {
 
         public int Linhas { get; set; }
         public int Colunas { get; set; }
-        private Pecas[,] Pecas;
-        public Tabuleiro(int linhas, int colunas)
+
+        private Peca[,] Peca;
+        public TabuleiroClass(int linhas, int colunas)
         {
             Linhas = linhas;
             Colunas = colunas;
-            Pecas = new Pecas[linhas, colunas];
+            Peca = new Peca[linhas, colunas];
         }
+
+        public Peca RecuperaPeca(int linha, int coluna)
+        {
+            return Peca[linha, coluna];
+
+        }
+
+
     }
 }
