@@ -12,7 +12,6 @@ namespace Xadrez___Console
             {
                 PartidaXadrez partida = new();
 
-
                 while (!partida.Terminada)
                 {
                     Console.Clear();
@@ -21,15 +20,16 @@ namespace Xadrez___Console
                     Console.WriteLine("Orgigem: ");
                     Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
 
+                    bool[,] posicoesPossiveis = partida.tab.RecuperaPeca(origem).MovimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
+
                     Console.WriteLine("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
 
                     partida.ExecutaMovimento(origem, destino);
                 }
-
-
-                //PosicaoXadrez px = new('a', 1);
-                //Console.WriteLine(px);
 
             }
             catch (TabuleiroException te)

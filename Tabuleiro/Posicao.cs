@@ -15,7 +15,6 @@ namespace Tabuleiro
             Linha = linha;
             Coluna = coluna;
         }
-
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -28,9 +27,11 @@ namespace Tabuleiro
             return sb.ToString();
         }
 
-
-
-
+        public void DefinirValores(int linha, int coluna)
+        {
+            Linha = (int)linha;
+            Coluna = (int)coluna;
+        }
 
     }
 

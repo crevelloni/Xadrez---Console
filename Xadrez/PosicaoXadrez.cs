@@ -21,7 +21,6 @@ namespace Xadrez
         {
             return new Posicao(8 - Linha, Coluna - 'a');
         }
-
         public override string ToString()
         {
             return string.Empty + Coluna + Linha;

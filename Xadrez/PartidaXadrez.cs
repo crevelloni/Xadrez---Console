@@ -31,9 +31,18 @@ namespace Xadrez
         }
         private void ColocarPecas()
         {
-            tab.ColocarPeca(new Torre(tab, Cor.Preto), new PosicaoXadrez('c', 1).ToPosicao());
+            tab.ColocarPeca(new Torre(tab, Cor.Preto), new PosicaoXadrez('c', 2).ToPosicao());
+            tab.ColocarPeca(new Torre(tab, Cor.Preto), new PosicaoXadrez('d', 2).ToPosicao());
+            tab.ColocarPeca(new Torre(tab, Cor.Preto), new PosicaoXadrez('e', 2).ToPosicao());
+            tab.ColocarPeca(new Rei(tab, Cor.Preto), new PosicaoXadrez('d', 1).ToPosicao());
+            tab.ColocarPeca(new Rainha(tab, Cor.Preto), new PosicaoXadrez('a', 6).ToPosicao());
+            tab.ColocarPeca(new Bispo(tab, Cor.Branco), new PosicaoXadrez('h', 5).ToPosicao());
+            tab.ColocarPeca(new Bispo(tab, Cor.Branco), new PosicaoXadrez('g', 1).ToPosicao());
+            tab.ColocarPeca(new Bispo(tab, Cor.Branco), new PosicaoXadrez('f', 4).ToPosicao());
+            tab.ColocarPeca(new Rei(tab, Cor.Branco), new PosicaoXadrez('c', 7).ToPosicao());
+            tab.ColocarPeca(new Rainha(tab, Cor.Branco), new PosicaoXadrez('e', 3).ToPosicao());
+
 
         }
-       
     }
 }
