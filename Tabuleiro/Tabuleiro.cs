@@ -35,6 +35,17 @@
             this.Peca[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
         }
+        public Peca RetirarPeca(Posicao pos)
+        {
+            if (RecuperaPeca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = RecuperaPeca(pos);
+            aux.Posicao = null;
+            Peca[pos.Linha, pos.Coluna] = null;
+            return aux;
+        }
         public bool PosicaoValida(Posicao pos)
         {
             if (pos.Linha < 0 || pos.Linha >= Linhas || pos.Coluna < 0 || pos.Coluna >= Colunas)
