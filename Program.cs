@@ -40,7 +40,7 @@ namespace Xadrez___Console
                     {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
-                        //178
+                        //184
                     }
                   
                 }

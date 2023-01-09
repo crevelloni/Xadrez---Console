@@ -54,15 +54,23 @@ namespace Xadrez___Console
 
         internal static void ImprimirPartida(PartidaXadrez partida)
         {
-            Tela.ImprimirTabuleiro(partida.tab);
+            ImprimirTabuleiro(partida.tab);
             Console.WriteLine();
             ImprimirPecasCapturadas(partida);
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando Jogada: " + partida.jogadorAtual);
-            Console.WriteLine();
-            if (partida.Xeque)
+            if (!partida.Terminada)
             {
-                Console.WriteLine("XEQUE!");
+                Console.WriteLine("Aguardando Jogada: " + partida.jogadorAtual);
+                Console.WriteLine();
+                if (partida.Xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
             
         }
