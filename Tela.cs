@@ -12,8 +12,6 @@ namespace Xadrez___Console
     {
         public static void ImprimirTabuleiro(TabuleiroClass tab)
         {
-            string[] letras = { " a", "b", "c", "d", "e", "f", "g", "h" };
-
             for (int i = 0; i < tab.Linhas; i++)
             {
                 Console.Write(8 - i + " ");
@@ -30,9 +28,6 @@ namespace Xadrez___Console
         {
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
-
-
-            string[] letras = { " a", "b", "c", "d", "e", "f", "g", "h" };
 
             for (int i = 0; i < tab.Linhas; i++)
             {
@@ -55,6 +50,39 @@ namespace Xadrez___Console
             }
             Console.WriteLine("  a b c d e f g h");
             Console.BackgroundColor = fundoOriginal;
+        }
+
+        internal static void ImprimirPartida(PartidaXadrez partida)
+        {
+            Tela.ImprimirTabuleiro(partida.tab);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+            Console.WriteLine("Turno: " + partida.turno);
+            Console.WriteLine("Aguardando Jogada: " + partida.jogadorAtual);
+            
+        }
+        public static void ImprimirPecasCapturadas(PartidaXadrez partida)
+        {
+            Console.WriteLine("Peças Capturadas:");
+            Console.Write("Brancas: ");
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Branco));
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Preto));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+        public static void ImprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach (var x in conjunto)
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write("]");
+
         }
         public static PosicaoXadrez LerPosicaoXadrez()
         {
