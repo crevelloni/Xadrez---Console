@@ -1,0 +1,15 @@
+[33m3c5dc45[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Implementação e testes Jogada especial en Passant
+[33m226dd7a[m Jogada especial roque pequeno e roque grande
+[33m0580cb8[m Acrescentando as demais peças
+[33md4edd07[m Implementando a verificação de xeque
+[33m5082f87[m Implementando captura de peças
+[33m8028c58[m testes iniciais de movimentos das peças
+[33m04d3d8b[m Implementando os primeiros testes de movimentação
+[33m8b1f8ae[m melhorando a impressão do tabuleiro
+[33me2247b2[m Criado classe PosiçãoXadrez
+[33mf91c325[m Tratando erros com exceção personalizada
+[33mff9493a[m Começando colocar peças no tabuleiro
+[33ma1304ae[m Início implementação tabuleiro
+[33ma60246f[m Criação classe  tabuleiro, enum cor e classe peças
+[33m1d50534[m Criação da pasta tabuleiro e classe Posição
+[33m54c1a60[m Projeto criado
