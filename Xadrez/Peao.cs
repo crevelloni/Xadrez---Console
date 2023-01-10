@@ -9,9 +9,10 @@ namespace Xadrez
 {
     public class Peao : Peca
     {
-        public Peao(TabuleiroClass tab, Cor cor) : base(tab, cor)
+        public PartidaXadrez Partida { get; set; }
+        public Peao(TabuleiroClass tab, Cor cor, PartidaXadrez partida) : base(tab, cor)
         {
-
+            Partida = partida;
         }
         public override string ToString()
         {
@@ -50,7 +51,7 @@ namespace Xadrez
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
-                pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna -1);
+                pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
                 if (Tabuleiro.PosicaoValida(pos) && ExisteInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
@@ -60,7 +61,21 @@ namespace Xadrez
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
-
+                //JogadasEspecias en Passant 
+                if (Posicao.Linha == 3)
+                {
+                    Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
+                    if (Tabuleiro.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && Tabuleiro.RecuperaPeca(esquerda) == Partida.VulneravelEnPassant)
+                    {
+                        mat[esquerda.Linha - 1, esquerda.Coluna] = true;
+                    }
+                    //JogadasEspecias en Passant 
+                    Posicao direita = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
+                    if (Tabuleiro.PosicaoValida(direita) && ExisteInimigo(direita) && Tabuleiro.RecuperaPeca(direita) == Partida.VulneravelEnPassant)
+                    {
+                        mat[direita.Linha - 1, direita.Coluna] = true;
+                    }
+                }
             }
             else
             {
@@ -83,6 +98,20 @@ namespace Xadrez
                 if (Tabuleiro.PosicaoValida(pos) && ExisteInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
+                }
+                //JogadasEspecias en Passant 
+                if (Posicao.Linha == 4)
+                {
+                    Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
+                    if (Tabuleiro.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && Tabuleiro.RecuperaPeca(esquerda) == Partida.VulneravelEnPassant)
+                    {
+                        mat[esquerda.Linha + 1, esquerda.Coluna] = true;
+                    }
+                    Posicao direita = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
+                    if (Tabuleiro.PosicaoValida(direita) && ExisteInimigo(direita) && Tabuleiro.RecuperaPeca(direita) == Partida.VulneravelEnPassant)
+                    {
+                        mat[direita.Linha + 1, direita.Coluna] = true;
+                    }
                 }
             }
             return mat;
